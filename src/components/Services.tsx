@@ -1,61 +1,95 @@
 import { motion } from 'motion/react';
-import { Code, Smartphone, Cpu, Bot, Layers, Sparkles } from 'lucide-react';
-import { StarBorder } from './ui/star-border';
+import { Bot, Sparkles } from 'lucide-react';
+import IconCloud from './ui/icon-cloud';
+
+const slugs = [
+  "typescript",
+  "javascript",
+  "react",
+  "html5",
+  "css3",
+  "nodedotjs",
+  "supabase",
+  "n8n",
+  "flutter",
+  "c",
+  "firebase",
+  "git",
+  "github",
+  "docker",
+  "python",
+  "dart"
+];
 
 const services = [
   {
     title: 'Full-Stack Development',
     description: 'Scalable, high-performance web applications built with modern frameworks like Next.js and React.',
-    icon: Code,
+    icon: null,
     color: 'text-primary',
   },
   {
     title: 'Mobile App Development',
     description: 'Native-feel cross-platform mobile applications for iOS and Android using Flutter and React Native.',
-    icon: Smartphone,
+    icon: null,
     color: 'text-accent',
   },
   {
     title: 'AI Integrations',
     description: 'Custom AI solutions, LLM implementations, and intelligent features that enhance user experience.',
-    icon: Bot,
+    icon: null,
     color: 'text-green-500',
   },
   {
     title: 'Automation Systems',
     description: 'End-to-end business process automation, API integrations, and custom workflow engines.',
-    icon: Cpu,
+    icon: null,
     color: 'text-purple-500',
   },
   {
     title: 'UI/UX Design',
     description: 'User-centric design systems that are both beautiful and functional, with a focus on motion.',
-    icon: Layers,
+    icon: null,
     color: 'text-pink-500',
   },
   {
     title: 'Digital Strategy',
     description: 'Consulting on tech stack selection, architecture design, and digital transformation.',
-    icon: Sparkles,
+    icon: null,
     color: 'text-yellow-500',
   },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-black relative">
+    <section id="services" className="py-24 bg-black relative overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mb-24">
-          <div className="flex items-center gap-3 mb-6">
-                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <p className="text-[10px] font-mono tracking-[0.4em] uppercase text-emerald-400">Engineering Portfolio</p>
+        <div className="flex flex-col lg:flex-row items-center gap-12 mb-24">
+          <div className="flex-1 max-w-2xl">
+            <div className="flex items-center gap-3 mb-6">
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <p className="text-[10px] font-mono tracking-[0.4em] uppercase text-emerald-400">Engineering Portfolio</p>
+            </div>
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-semibold uppercase tracking-[-0.04em] mb-8 leading-none italic">
+              System <br/><span className="text-white/40">Capabilities</span>
+            </h2>
+            <p className="text-lg md:text-xl text-white/50 font-sans leading-relaxed">
+              Architecting high-performance digital environments through precise code and intelligent automation.
+            </p>
           </div>
-          <h2 className="text-4xl md:text-6xl lg:text-8xl font-display font-semibold uppercase tracking-[-0.04em] mb-8 leading-none italic">
-            System <br/><span className="text-white/40">Capabilities</span>
-          </h2>
-          <p className="text-xl text-white/50 max-w-2xl font-sans leading-relaxed">
-            Architecting high-performance digital environments through precise code and intelligent automation.
-          </p>
+          
+          <div className="flex-1 w-full max-w-sm lg:max-w-md">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="relative aspect-square flex items-center justify-center"
+            >
+              <div className="absolute inset-0 bg-emerald-400/5 blur-[100px] rounded-full" />
+              <IconCloud iconSlugs={slugs} />
+            </motion.div>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12">
@@ -69,9 +103,6 @@ export default function Services() {
               className="flex flex-col group"
             >
               <div className="flex items-start justify-between mb-6">
-                <div className={`p-4 border border-white/5 bg-white/2 rounded-sm group-hover:bg-white/10 transition-colors ${service.color}`}>
-                  <service.icon size={24} strokeWidth={1.5} />
-                </div>
                 <span className="text-[10px] font-mono text-white/20 tracking-widest uppercase italic">0{i+1}</span>
               </div>
               <h3 className="text-2xl font-display font-semibold uppercase tracking-tight mb-4 group-hover:text-cyan-400 transition-colors">{service.title}</h3>
