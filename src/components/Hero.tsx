@@ -92,10 +92,10 @@ export default function Hero() {
               >
                 <div className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_10px_rgba(34,211,238,0.8)]" />
-                    <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-white/50 drop-shadow-sm">Collective Intelligence</span>
+                    <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-white/50 drop-shadow-sm">Founding Duo</span>
                 </div>
                 <p className="text-sm md:text-base text-white leading-relaxed font-sans max-w-sm drop-shadow-lg opacity-90">
-                  We are a dual-force engineering studio building digital systems and intelligent automation for real-world impact. Bound by passion and hunger to unlock potential through unique perspectives.
+                  We are two Computer Science students, Zaiti Abderrahmane and Habibi Abdelhadi. A dual-force engineering studio building digital systems and intelligent automation for real-world impact.
                 </p>
               </motion.div>
 
