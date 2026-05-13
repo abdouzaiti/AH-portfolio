@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
-import { motion, useInView } from 'motion/react';
+import { motion, useInView, useScroll, useTransform } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
+import Magnetic from './ui/Magnetic';
 
 /* ---------------- WordsPullUp ---------------- */
 interface WordsPullUpProps {
@@ -40,16 +41,26 @@ export const WordsPullUp = ({ text, className = "", showAsterisk = false, style 
 };
 
 export default function Hero() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  });
+
+  const videoY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
+
   return (
-    <section className="h-screen w-full bg-black">
+    <section ref={containerRef} className="h-screen w-full bg-black">
       <div className="relative h-full w-full overflow-hidden">
         
         {/* Background video - Single Subject Studio */}
-        <video
+        <motion.video
           autoPlay
           loop
           muted
           playsInline
+          style={{ y: videoY, scale: videoScale }}
           className="absolute inset-0 h-full w-full object-cover opacity-80"
           src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4"
         />
@@ -90,18 +101,21 @@ export default function Hero() {
 
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
                 transition={{ duration: 1, delay: 1, ease: [0.16, 1, 0.3, 1] }}
               >
-                <button
-                  onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="group inline-flex items-center gap-4 rounded-sm bg-white py-1 pl-6 pr-1 text-xs font-mono uppercase tracking-[0.2em] text-black transition-all hover:pr-2 interactive"
-                >
-                  Enter the lab
-                  <span className="flex h-10 w-10 items-center justify-center rounded-sm bg-black transition-transform group-hover:scale-105">
-                    <ArrowRight className="h-4 w-4 text-white" />
-                  </span>
-                </button>
+                <Magnetic>
+                    <button
+                    onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="group inline-flex items-center gap-4 rounded-sm bg-white py-1 pl-6 pr-1 text-xs font-mono uppercase tracking-[0.2em] text-black transition-all hover:pr-2 interactive"
+                    >
+                    Enter the lab
+                    <span className="flex h-10 w-10 items-center justify-center rounded-sm bg-black transition-transform group-hover:scale-105">
+                        <ArrowRight className="h-4 w-4 text-white" />
+                    </span>
+                    </button>
+                </Magnetic>
               </motion.div>
 
             </div>

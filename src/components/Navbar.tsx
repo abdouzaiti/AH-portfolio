@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 import Logo from './Logo';
+import Magnetic from './ui/Magnetic';
 import { StarButton } from './ui/star-button';
 
 export default function Navbar() {
@@ -36,7 +37,9 @@ export default function Navbar() {
           animate={{ opacity: 1, x: 0 }}
           className="flex items-center"
         >
-          <Logo />
+          <Magnetic>
+            <Logo />
+          </Magnetic>
         </motion.a>
 
         {/* Desktop Nav */}
@@ -59,12 +62,14 @@ export default function Navbar() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: navLinks.length * 0.1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
           >
-            <button 
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-6 py-2 border border-white/20 rounded-sm text-[10px] font-mono tracking-[0.3em] uppercase text-white hover:bg-white hover:text-black transition-all interactive"
-            >
-              Initialize Contact
-            </button>
+            <Magnetic>
+                <button 
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="px-6 py-2 border border-white/20 rounded-sm text-[10px] font-mono tracking-[0.3em] uppercase text-white hover:bg-white hover:text-black transition-all interactive"
+                >
+                Initialize Contact
+                </button>
+            </Magnetic>
           </motion.div>
         </div>
 

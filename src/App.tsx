@@ -9,6 +9,7 @@ import Services from './components/Services';
 import Process from './components/Process';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ScrollProgress from './components/ui/ScrollProgress';
 
 import { BeamsBackground } from './components/ui/beams-background';
 
@@ -43,6 +44,7 @@ export default function App() {
       {booting && <BootSequence onComplete={() => setBooting(false)} />}
       
       <div className={`${booting ? 'h-screen overflow-hidden' : ''} bg-black`}>
+        <ScrollProgress />
         <main className="relative min-h-screen">
           <Navbar />
           

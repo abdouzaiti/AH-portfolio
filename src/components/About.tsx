@@ -1,5 +1,7 @@
 import { motion } from 'motion/react';
 import { Code2, Cpu, Globe, Smartphone, Zap } from 'lucide-react';
+import { ParallaxImage } from './ui/ParallaxImage';
+import { ScrollReveal } from './ui/ScrollReveal';
 
 const skills = {
   abdou: [
@@ -20,20 +22,18 @@ export default function About() {
   return (
     <section id="about" className="py-24 relative overflow-hidden bg-black">
       <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-20"
-        >
-          <h2 className="text-4xl md:text-6xl lg:text-8xl font-display font-semibold uppercase tracking-[-0.04em] mb-8">
-            The Duo Behind <br/>the <span className="text-white/40">Magic</span>
-          </h2>
-          <p className="text-xl text-white/50 max-w-2xl mx-auto font-sans leading-relaxed">
-            Combining high-end development with intelligent automation to build the future of digital business.
-          </p>
-        </motion.div>
+        <div className="text-center mb-20">
+          <ScrollReveal direction="up" className="mx-auto">
+            <h2 className="text-4xl md:text-6xl lg:text-8xl font-display font-semibold uppercase tracking-[-0.04em] mb-8">
+              The Duo Behind <br/>the <span className="text-white/40">Magic</span>
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={0.2} className="mx-auto">
+            <p className="text-xl text-white/50 max-w-2xl mx-auto font-sans leading-relaxed">
+              Combining high-end development with intelligent automation to build the future of digital business.
+            </p>
+          </ScrollReveal>
+        </div>
 
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
           {/* Abdou */}
@@ -46,12 +46,12 @@ export default function About() {
           >
             <div className="flex flex-col gap-8 h-full">
                 <div className="relative aspect-video w-full overflow-hidden rounded-sm border border-white/5 bg-white/2">
-                    <img 
+                    <ParallaxImage 
                         src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=1200" 
                         alt="Zaiti Abdou working" 
-                        className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700"
+                        className="w-full h-full grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60 z-10" />
                 </div>
                 
                 <div className="flex flex-col flex-1">
@@ -86,12 +86,12 @@ export default function About() {
           >
             <div className="flex flex-col gap-8 h-full">
                 <div className="relative aspect-video w-full overflow-hidden rounded-sm border border-white/5 bg-white/2">
-                    <img 
+                    <ParallaxImage 
                         src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200" 
                         alt="Habibi Abdelhadi working" 
-                        className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700"
+                        className="w-full h-full grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60 z-10" />
                 </div>
 
                 <div className="flex flex-col flex-1">

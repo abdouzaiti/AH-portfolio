@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Bot, Sparkles } from 'lucide-react';
 import IconCloud from './ui/icon-cloud';
+import { ScrollReveal } from './ui/ScrollReveal';
 
 const slugs = [
   "typescript",
@@ -66,16 +67,22 @@ export default function Services() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-center gap-12 mb-24">
           <div className="flex-1 max-w-2xl">
-            <div className="flex items-center gap-3 mb-6">
-                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <p className="text-[10px] font-mono tracking-[0.4em] uppercase text-emerald-400">Engineering Portfolio</p>
-            </div>
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-semibold uppercase tracking-[-0.04em] mb-8 leading-none italic">
-              System <br/><span className="text-white/40">Capabilities</span>
-            </h2>
-            <p className="text-lg md:text-xl text-white/50 font-sans leading-relaxed">
-              Architecting high-performance digital environments through precise code and intelligent automation.
-            </p>
+            <ScrollReveal>
+              <div className="flex items-center gap-3 mb-6">
+                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <p className="text-[10px] font-mono tracking-[0.4em] uppercase text-emerald-400">Engineering Portfolio</p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={0.2}>
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-semibold uppercase tracking-[-0.04em] mb-8 leading-none italic">
+                System <br/><span className="text-white/40">Capabilities</span>
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal delay={0.4}>
+              <p className="text-lg md:text-xl text-white/50 font-sans leading-relaxed">
+                Architecting high-performance digital environments through precise code and intelligent automation.
+              </p>
+            </ScrollReveal>
           </div>
           
           <div className="flex-1 w-full max-w-sm lg:max-w-md">

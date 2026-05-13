@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ExternalLink, Github, X } from 'lucide-react';
+import { ScrollReveal } from './ui/ScrollReveal';
 import { StarButton } from './ui/star-button';
 import { StarBorder } from './ui/star-border';
 import { ScannerCardStream } from './ScannerCardStream';
@@ -83,28 +84,33 @@ export default function Projects() {
     <section id="projects" className="py-24 relative overflow-hidden bg-black">
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-          <div>
-            <h2 className="text-4xl md:text-6xl lg:text-8xl font-display font-semibold uppercase tracking-[-0.04em] mb-4">
-              Selected <span className="text-white/40">Work</span>
-            </h2>
-            <div className="flex items-center gap-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-                <p className="text-[10px] font-mono tracking-[0.3em] uppercase text-white/50">System Deployment Repository</p>
+          <ScrollReveal direction="left">
+            <div>
+              <h2 className="text-4xl md:text-6xl lg:text-8xl font-display font-semibold uppercase tracking-[-0.04em] mb-4">
+                Selected <span className="text-white/40">Work</span>
+              </h2>
+              <div className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                  <p className="text-[10px] font-mono tracking-[0.3em] uppercase text-white/50">System Deployment Repository</p>
+              </div>
             </div>
-          </div>
-          <div className="flex gap-2 bg-white/2 p-1 rounded-sm border border-white/10 overflow-x-auto no-scrollbar max-w-full">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setFilter(cat)}
-                className={`px-4 py-1.5 rounded-sm text-[10px] font-mono uppercase tracking-[0.2em] transition-all whitespace-nowrap ${
-                  filter === cat ? 'bg-white text-black' : 'text-white/40 hover:text-white hover:bg-white/5'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
+          </ScrollReveal>
+          
+          <ScrollReveal direction="right" delay={0.3}>
+            <div className="flex gap-2 bg-white/2 p-1 rounded-sm border border-white/10 overflow-x-auto no-scrollbar max-w-full">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setFilter(cat)}
+                  className={`px-4 py-1.5 rounded-sm text-[10px] font-mono uppercase tracking-[0.2em] transition-all whitespace-nowrap ${
+                    filter === cat ? 'bg-white text-black' : 'text-white/40 hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
 
         <div className="w-full relative mt-8">

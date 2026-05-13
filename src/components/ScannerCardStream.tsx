@@ -203,6 +203,17 @@ const ScannerCardStream = ({
       cardStreamState.current.direction = e.deltaY > 0 ? -1 : 1;
     };
 
+    // Add scroll listener for global scroll interaction
+    const handleGlobalScroll = () => {
+        const scrollVelocity = Math.abs(window.scrollY - lastScrollY.current);
+        if (scrollVelocity > 5) {
+            cardStreamState.current.velocity = Math.min(scrollVelocity * 5, 2000);
+        }
+        lastScrollY.current = window.scrollY;
+    };
+    let lastScrollY = { current: window.scrollY };
+
+    window.addEventListener("scroll", handleGlobalScroll, { passive: true });
     cardLine.addEventListener("mousedown", handleMouseDown as EventListener);
     window.addEventListener("mousemove", handleMouseMove as EventListener);
     window.addEventListener("mouseup", handleMouseUp);
@@ -246,6 +257,7 @@ const ScannerCardStream = ({
     
     return () => {
        cancelAnimationFrame(animationFrameId);
+       window.removeEventListener("scroll", handleGlobalScroll);
        cardLine.removeEventListener("mousedown", handleMouseDown as EventListener);
        window.removeEventListener("mousemove", handleMouseMove as EventListener);
        window.removeEventListener("mouseup", handleMouseUp);

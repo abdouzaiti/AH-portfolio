@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { ScrollReveal } from './ui/ScrollReveal';
 
 const steps = [
   {
@@ -33,16 +34,22 @@ export default function Process() {
     <section id="process" className="py-24 bg-black relative">
       <div className="container mx-auto px-6">
         <div className="text-center mb-32">
-          <div className="flex items-center justify-center gap-3 mb-6">
-                <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-                <p className="text-[10px] font-mono tracking-[0.4em] uppercase text-white/50">Execution Framework</p>
-          </div>
-          <h2 className="text-4xl md:text-6xl lg:text-8xl font-display font-semibold uppercase tracking-[-0.04em] mb-8 leading-none">
-            Strategic <span className="text-white/40">Process</span>
-          </h2>
-          <p className="text-xl text-white/50 max-w-2xl mx-auto font-sans leading-relaxed">
-            A precise engineering methodology designed to transition from complex problems to high-performance systems.
-          </p>
+          <ScrollReveal direction="up" className="mx-auto">
+            <div className="flex items-center justify-center gap-3 mb-6">
+                  <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                  <p className="text-[10px] font-mono tracking-[0.4em] uppercase text-white/50">Execution Framework</p>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={0.2} className="mx-auto">
+            <h2 className="text-4xl md:text-6xl lg:text-8xl font-display font-semibold uppercase tracking-[-0.04em] mb-8 leading-none">
+              Strategic <span className="text-white/40">Process</span>
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal direction="up" delay={0.4} className="mx-auto">
+            <p className="text-xl text-white/50 max-w-2xl mx-auto font-sans leading-relaxed">
+              A precise engineering methodology designed to transition from complex problems to high-performance systems.
+            </p>
+          </ScrollReveal>
         </div>
 
         <div className="relative">
