@@ -43,7 +43,7 @@ export default function App() {
       {booting && <BootSequence onComplete={() => setBooting(false)} />}
       
       <div className={`${booting ? 'h-screen overflow-hidden' : ''} bg-black`}>
-        <main className="relative bg-black min-h-screen">
+        <main className="relative min-h-screen">
           <Navbar />
           
           <Hero />
