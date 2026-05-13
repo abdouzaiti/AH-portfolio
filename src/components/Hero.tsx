@@ -67,7 +67,7 @@ export default function Hero() {
 
         {/* Noise & Texture Overlays - Lightened for clarity */}
         <div className="noise-overlay pointer-events-none absolute inset-0 opacity-[0.2] mix-blend-overlay" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80" />
 
         {/* Hero content */}
         <div className="absolute inset-0 flex flex-col justify-end px-6 pb-8 md:px-12 md:pb-16 lg:px-20 lg:pb-24">
@@ -75,7 +75,7 @@ export default function Hero() {
             
             <div className="col-span-12 lg:col-span-9 translate-x-[-0.04em]">
               <h1
-                className="font-display font-semibold leading-[0.9] tracking-[-0.05em] text-[15vw] sm:text-[12vw] md:text-[10vw] lg:text-[7.5vw] uppercase pointer-events-none"
+                className="font-display font-semibold leading-[0.9] tracking-[-0.05em] text-[15vw] sm:text-[12vw] md:text-[10vw] lg:text-[7.5vw] uppercase pointer-events-none drop-shadow-2xl"
                 style={{ color: "#E1E0CC" }}
               >
                 <WordsPullUp text="ZAITI × HABIBI" />
@@ -91,10 +91,10 @@ export default function Hero() {
                 className="space-y-4"
               >
                 <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-                    <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-white/40">Collective Intelligence</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_10px_rgba(34,211,238,0.8)]" />
+                    <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-white/50 drop-shadow-sm">Collective Intelligence</span>
                 </div>
-                <p className="text-sm md:text-base text-white/60 leading-relaxed font-sans max-w-sm">
+                <p className="text-sm md:text-base text-white leading-relaxed font-sans max-w-sm drop-shadow-lg opacity-90">
                   We are a dual-force engineering studio building digital systems and intelligent automation for real-world impact. Bound by passion and hunger to unlock potential through unique perspectives.
                 </p>
               </motion.div>
