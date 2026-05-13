@@ -64,7 +64,7 @@ export default function Hero() {
             
             <div className="col-span-12 lg:col-span-9 translate-x-[-0.04em]">
               <h1
-                className="font-display font-semibold leading-[0.9] tracking-[-0.05em] text-[12vw] sm:text-[10vw] md:text-[8.5vw] lg:text-[7.5vw] uppercase pointer-events-none"
+                className="font-display font-semibold leading-[0.9] tracking-[-0.05em] text-[15vw] sm:text-[12vw] md:text-[10vw] lg:text-[7.5vw] uppercase pointer-events-none"
                 style={{ color: "#E1E0CC" }}
               >
                 <WordsPullUp text="ZAITI × HABIBI" showAsterisk />

@@ -89,45 +89,52 @@ export default function Navbar() {
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 w-[80%] max-w-sm bg-background/95 backdrop-blur-xl z-50 flex flex-col p-12 md:hidden border-l border-white/10"
+              transition={{ type: 'spring', damping: 30, stiffness: 300 }}
+              className="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-black/95 backdrop-blur-2xl z-50 flex flex-col p-8 md:hidden border-l border-white/10"
             >
-              <div className="flex justify-end mb-12">
-                <button onClick={() => setIsOpen(false)} className="text-foreground">
+              <div className="flex justify-between items-center mb-16">
+                <Logo />
+                <button onClick={() => setIsOpen(false)} className="text-white p-2">
                   <X size={32} />
                 </button>
               </div>
-              <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-10">
                 {navLinks.map((link, i) => (
                   <motion.a
                     key={link.name}
                     href={link.href}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.1 }}
+                    transition={{ delay: i * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     onClick={() => setIsOpen(false)}
-                    className="text-3xl font-bold hover:text-primary transition-colors"
+                    className="text-4xl font-display font-semibold uppercase tracking-tight hover:text-cyan-400 transition-colors"
                   >
                     {link.name}
                   </motion.a>
                 ))}
+                
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: navLinks.length * 0.1 }}
-                  className="mt-4"
+                  transition={{ delay: navLinks.length * 0.1 + 0.2 }}
+                  className="mt-8 pt-8 border-t border-white/10"
                 >
-                  <StarButton 
+                  <button 
                     onClick={() => {
                       setIsOpen(false);
-                      window.location.href = '#contact';
+                      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="w-full h-14 rounded-full text-lg font-bold"
-                    lightColor="rgba(59, 130, 246, 0.5)"
+                    className="w-full py-5 bg-white text-black font-semibold uppercase tracking-[0.3em] text-xs transition-transform active:scale-95"
                   >
-                    Contact
-                  </StarButton>
+                    Initialize Connection
+                  </button>
                 </motion.div>
+              </div>
+
+              <div className="mt-auto pb-8">
+                  <p className="text-[10px] font-mono uppercase tracking-[0.4em] text-white/30">
+                      System Version 2.0.4
+                  </p>
               </div>
             </motion.div>
           </>

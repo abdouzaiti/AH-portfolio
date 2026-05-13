@@ -27,7 +27,7 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h2 className="text-6xl md:text-8xl font-display font-semibold uppercase tracking-[-0.04em] mb-8">
+          <h2 className="text-4xl md:text-6xl lg:text-8xl font-display font-semibold uppercase tracking-[-0.04em] mb-8">
             The Duo Behind <br/>the <span className="text-white/40">Magic</span>
           </h2>
           <p className="text-xl text-white/50 max-w-2xl mx-auto font-sans leading-relaxed">

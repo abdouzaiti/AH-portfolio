@@ -84,7 +84,7 @@ export default function Projects() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
           <div>
-            <h2 className="text-6xl md:text-8xl font-display font-semibold uppercase tracking-[-0.04em] mb-4">
+            <h2 className="text-4xl md:text-6xl lg:text-8xl font-display font-semibold uppercase tracking-[-0.04em] mb-4">
               Selected <span className="text-white/40">Work</span>
             </h2>
             <div className="flex items-center gap-3">

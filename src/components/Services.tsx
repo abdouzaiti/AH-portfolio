@@ -50,7 +50,7 @@ export default function Services() {
                 <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 <p className="text-[10px] font-mono tracking-[0.4em] uppercase text-emerald-400">Engineering Portfolio</p>
           </div>
-          <h2 className="text-6xl md:text-8xl font-display font-semibold uppercase tracking-[-0.04em] mb-8 leading-none">
+          <h2 className="text-4xl md:text-6xl lg:text-8xl font-display font-semibold uppercase tracking-[-0.04em] mb-8 leading-none italic">
             System <br/><span className="text-white/40">Capabilities</span>
           </h2>
           <p className="text-xl text-white/50 max-w-2xl font-sans leading-relaxed">
