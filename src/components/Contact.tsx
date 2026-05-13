@@ -15,6 +15,28 @@ export default function Contact() {
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const whatsappNumber = "213657097226";
+    const text = `*New Signal Transmission*\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Message:* ${formData.message}`;
+    const encodedText = encodeURIComponent(text);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
+    
+    window.open(whatsappUrl, '_blank');
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
   return (
     <section id="contact" className="py-24 relative bg-black">
       <div className="container mx-auto px-4 md:px-6">
@@ -90,11 +112,15 @@ export default function Contact() {
                 <div className="mb-12">
                   <h3 className="text-2xl font-display font-semibold uppercase tracking-tight mb-2 italic">Signal Transmission</h3>
                 </div>
-                <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+                <form className="space-y-8" onSubmit={handleSubmit}>
                   <div className="space-y-3">
                     <label className="text-[10px] font-mono uppercase tracking-[0.3em] text-white/40">Full Name</label>
                     <input 
                       type="text" 
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={handleInputChange}
                       className="w-full bg-black/50 border-b border-white/10 py-3 outline-none focus:border-cyan-400 transition-colors bg-transparent font-sans"
                       placeholder="e.g. JOHN DOE"
                     />
@@ -103,6 +129,10 @@ export default function Contact() {
                     <label className="text-[10px] font-mono uppercase tracking-[0.3em] text-white/40">Email Address</label>
                     <input 
                       type="email" 
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleInputChange}
                       className="w-full bg-black/50 border-b border-white/10 py-3 outline-none focus:border-cyan-400 transition-colors bg-transparent font-sans"
                       placeholder="e.g. JOHN@EXAMPLE.COM"
                     />
@@ -111,11 +141,16 @@ export default function Contact() {
                     <label className="text-[10px] font-mono uppercase tracking-[0.3em] text-white/40">Message</label>
                     <textarea 
                       rows={4}
+                      name="message"
+                      required
+                      value={formData.message}
+                      onChange={handleInputChange}
                       className="w-full bg-black/50 border-b border-white/10 py-3 outline-none focus:border-cyan-400 transition-colors bg-transparent font-sans resize-none"
                       placeholder="Describe the system requirements..."
                     />
                   </div>
                   <button 
+                    type="submit"
                     className="w-full py-5 bg-white text-black font-semibold uppercase tracking-[0.3em] text-xs transition-transform hover:scale-105 active:scale-95 interactive"
                   >
                     Initiate Transmission
