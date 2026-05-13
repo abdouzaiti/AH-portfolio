@@ -110,7 +110,7 @@ export default function Contact() {
           >
             <div className="p-8 md:p-12 border border-white/5 bg-white/2 backdrop-blur-3xl rounded-sm">
                 <div className="mb-12">
-                  <h3 className="text-2xl font-display font-semibold uppercase tracking-tight mb-2 italic">Signal Transmission</h3>
+                  <h3 className="text-2xl font-display font-semibold uppercase tracking-tight mb-2 italic">Contact us at WhatsApp</h3>
                 </div>
                 <form className="space-y-8" onSubmit={handleSubmit}>
                   <div className="space-y-3">
@@ -122,7 +122,7 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleInputChange}
                       className="w-full bg-black/50 border-b border-white/10 py-3 outline-none focus:border-cyan-400 transition-colors bg-transparent font-sans"
-                      placeholder="e.g. JOHN DOE"
+                      placeholder="mohamad"
                     />
                   </div>
                   <div className="space-y-3">
@@ -134,7 +134,7 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleInputChange}
                       className="w-full bg-black/50 border-b border-white/10 py-3 outline-none focus:border-cyan-400 transition-colors bg-transparent font-sans"
-                      placeholder="e.g. JOHN@EXAMPLE.COM"
+                      placeholder="mohamad@EXAMPLE.COM"
                     />
                   </div>
                   <div className="space-y-3">
@@ -153,7 +153,7 @@ export default function Contact() {
                     type="submit"
                     className="w-full py-5 bg-white text-black font-semibold uppercase tracking-[0.3em] text-xs transition-transform hover:scale-105 active:scale-95 interactive"
                   >
-                    Initiate Transmission
+                    Send a Message
                   </button>
                 </form>
             </div>
