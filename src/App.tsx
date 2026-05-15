@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import Lenis from 'lenis';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import { BootSequence } from './components/BootSequence';
 import About from './components/About';
 import Projects from './components/Projects';
 import Services from './components/Services';
@@ -14,7 +13,7 @@ import ScrollProgress from './components/ui/ScrollProgress';
 import { BeamsBackground } from './components/ui/beams-background';
 
 export default function App() {
-  const [booting, setBooting] = useState(true);
+  const [booting, setBooting] = useState(false);
 
   useEffect(() => {
     if (booting) return; // Wait until boot completes before starting scroll
@@ -41,9 +40,7 @@ export default function App() {
 
   return (
     <>
-      {booting && <BootSequence onComplete={() => setBooting(false)} />}
-      
-      <div className={`${booting ? 'h-screen overflow-hidden' : ''} bg-black`}>
+      <div className="bg-black">
         <ScrollProgress />
         <main className="relative min-h-screen">
           <Navbar />
